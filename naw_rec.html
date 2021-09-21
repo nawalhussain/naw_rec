@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nawal's Food reviews</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="naw_rec.css">
+    </head>
+
+    <body>
+        <br>
+        <h1 style="text-align: center; font-family: Copperplate; font-size: 50px;">Nawal's food journey</h1>
+        <br>
+        <br>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Cities 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="naw_rec_main.html?search=toronto">Toronto</a>
+                    <br>
+                    <a href="naw_rec_main.html?search=waterloo">Waterloo</a>
+                </div>
+            </div> 
+
+            <div class="dropdown">
+                <button class="dropbtn">Cuisines 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="naw_rec_main.html?search=american">American</a>
+                    <br>
+                    <a href="naw_rec_main.html?search=indian">Indian</a>
+                    <br>
+                    <a href="naw_rec_main.html?search=arab">Arab</a>
+                </div>
+            </div> 
+
+            <a href="#contact">Contact Us</a>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div id="div-search">
+            <form action="naw_rec_main.html" method="get">
+                <input type="text" id="main-search" name="search" placeholder="Filter restaurants by: name, city, cuisine" 
+                onmouseover="search_bar_on(this)" onmouseout="search_bar_off(this)">
+            </form>
+        </div>
+        <br>
+        <br>
+        <pre id="about">
+
+    I love trying out different foods and this blog is about documenting that journey.  
+    Having lived in multiple cities and countries I have gotten the chance to experince  
+    some of the best restaurants and cuisines out there.   
+    Hopefully you can benefit from my experinces and verdicts.  
+        </pre>
+
+        <script>
+            function search_bar_on(obj) {
+                obj.style.backgroundColor = "rgb(230, 0, 0)";
+            }
+            function search_bar_off(obj) {
+                obj.style.backgroundColor = "rgb(177, 7, 7)";
+            }
+
+            document.getElementById('main-search')
+            .addEventListener('keyup', function(event) {
+                if (event.code === 'Enter')
+                {
+                    event.preventDefault();
+                    document.querySelector('form').submit();
+                }
+            });
+            
+        </script>
+    </body>
+
+
+    <!--
+        1) add form for questions/feedback
+        2) add filter bar to the left to filter restaurans by cuisine, city, price range etc. Still keep the input box
+           as that allows for filter by name
+        3) every page you get to for cuisine/city will still have the same filter on the page, just that that cuisine/city will be clicked on that filter.
+    -->
+
+
+</html>
